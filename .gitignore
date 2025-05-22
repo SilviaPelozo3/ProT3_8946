@@ -1,19 +1,38 @@
-# Archivos de configuración
+# Archivos sensibles y de entorno
 .env
 
-# Archivos temporales o innecesarios
-*.log
+# Directorios del entorno de desarrollo
+.vscode/
+.idea/
+
+# Sistema de caché y logs de CodeIgniter
+writable/cache/
+writable/debugbar/
+writable/logs/
+writable/session/
+writable/uploads/
+
+# Base de datos de SQLite (si se usa)
+*.sqlite
+*.sqlite3
+*.db
+
+# Archivos temporales y de sistema
 *.bak
 *.tmp
-
-# Carpetas que no deberían subirse
-node_modules/
-vendor/
-writable/
-public/uploads/
-
-# Archivos del sistema o editores
+*.swp
+*.swo
 .DS_Store
 Thumbs.db
-.idea/
-.vscode/
+
+# Dependencias externas (si las descargás)
+node_modules/
+vendor/
+
+# Archivos de sistema operativo
+ehthumbs.db
+desktop.ini
+
+# Carpetas de pruebas (si existieran)
+tests/
+coverage/
