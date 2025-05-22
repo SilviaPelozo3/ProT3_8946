@@ -1,0 +1,19 @@
+# Archivos de configuración
+.env
+
+# Archivos temporales o innecesarios
+*.log
+*.bak
+*.tmp
+
+# Carpetas que no deberían subirse
+node_modules/
+vendor/
+writable/
+public/uploads/
+
+# Archivos del sistema o editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
