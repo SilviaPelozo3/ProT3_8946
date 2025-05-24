@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="miestilo.css">
+    <style>
+        h1 {
+            color: #0e7e46;
+        }
+        p {
+            color: blue;
+        }
+    </style>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
