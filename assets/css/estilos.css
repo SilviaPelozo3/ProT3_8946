@@ -1,20 +1,20 @@
-<link rel="stylesheet" href="miestilo.css">
-    <style>
-        h1 {
-            color: #0e7e46;
-        }
-        p {
-            color: blue;
-        }
-    </style>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
+/* Navbar verde */
+.navbar-custom {
+    background-color: #0e7e46; /* Verde oscuro, ajusta a gusto */
+}
+
+/* Botones flotantes */
+.navbar .btn {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.navbar .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Color de texto verde (para botones claros) */
+.text-green {
+    color: #0e7e46 !important;
+}

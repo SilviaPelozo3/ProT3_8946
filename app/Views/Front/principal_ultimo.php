@@ -1,11 +1,9 @@
-<?= $this->include('Front/head_view') ?>
-<?= $this->include('Front/navbar_view') ?>
-
 <div class="content">
     <section class="container my-5">
-        <img src="<?= base_url('assets/imagenes/logo.jpeg') ?>" alt="Imagen ilustrativa" class="imagen-principal img-fluid mx-auto d-block">
-        
-        <div class="cajadeparrafos my-4">
+         <main class="container">        
+        <img src="<?= base_url('imagenes/imagen-fundacion.jpg') ?>" alt="Imagen ilustrativa" class="img-fluid">
+    </main>
+                <div class="cajadeparrafos my-4">
             <p class="texto-estilo">Somos una fundación sin fines de lucro dedicada a promover el desarrollo social y educativo de niños, jóvenes y familias en situación de vulnerabilidad.</p>
             <p>Trabajamos desde una perspectiva inclusiva, generando espacios de aprendizaje, contención y participación comunitaria.</p>
         </div>
@@ -38,4 +36,4 @@
     <!-- Fin del Carrusel -->
 </div>
 
-<?= $this->include('Front/footer_view') ?>
+

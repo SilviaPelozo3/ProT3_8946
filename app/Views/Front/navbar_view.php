@@ -1,10 +1,10 @@
 <!-- Barra de Navegación -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-green bg-green">
   <div class="container-fluid">
     <!-- Logo y nombre -->
     <a class="navbar-brand" href="<?= base_url() ?>">
-      <img src="<?= base_url('imagenes/logo.jpeg') ?>" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-      Fundación
+      <img src="<?= base_url('imagenes/logo.jpeg') ?>" alt="Logo" width="300" height="30" class="d-inline-block align-text-top">
+      
     </a>
 
     <!-- Botón para móviles -->
