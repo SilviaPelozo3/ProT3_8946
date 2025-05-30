@@ -43,4 +43,29 @@ class Home extends BaseController
              . view('Front/login')
              . view('Front/footer_view');
     }
+
+    // NUEVAS FUNCIONES
+    public function galeria(): string
+    {
+        return view('Front/head_view')
+             . view('Front/navbar_view')
+             . view('Front/galeria')
+             . view('Front/footer_view');
+    }
+
+    public function eventos(): string
+    {
+        return view('Front/head_view')
+             . view('Front/navbar_view')
+             . view('Front/eventos')
+             . view('Front/footer_view');
+    }
+
+    public function noticias(): string
+    {
+        return view('Front/head_view')
+             . view('Front/navbar_view')
+             . view('Front/noticias')
+             . view('Front/footer_view');
+    }
 }

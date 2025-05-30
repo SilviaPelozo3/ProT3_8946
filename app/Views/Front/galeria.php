@@ -6,6 +6,6 @@
     <!-- Card 1 -->
     <div class="col">
       <div class="card h-100">
-        <img src="imagenes/actividad1.jpg" class="card-img-top" alt="Actividad 1">
+        <img src="imagenes/actividad1.jpeg" class="card-img-top" alt="Actividad 1">
         <div class="card-body">
           <h5 class="card-title">Actividad 1</h5>

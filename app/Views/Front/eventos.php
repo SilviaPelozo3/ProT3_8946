@@ -9,4 +9,4 @@
         <img src="imagenes/evento1.jpg" class="card-img-top" alt="Evento 1">
         <div class="card-body">
           <h5 class="card-title">Taller de Artesanía Guaraní</h5>
-          <p class="card-text">Fecha: 15 de marzo de 2024</p>
+          <p class="card-text">Fecha: 15 de septiembre de 2025</p>

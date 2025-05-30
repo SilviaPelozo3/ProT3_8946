@@ -1,7 +1,7 @@
 <div class="content">
     <section class="container my-5">
          <main class="container">        
-        <img src="<?= base_url('imagenes/imagen-fundacion.jpg') ?>" alt="Imagen ilustrativa" class="img-fluid">
+        <img src="<?= base_url('imagenes/imagen-fundacion.jpg') ?>" alt="Imagen ilustrativa" class="img-fluid w-50 rounded shadow-sm d-block mx-auto">
     </main>
                 <div class="cajadeparrafos my-4">
             <p class="texto-estilo">Somos una fundación sin fines de lucro dedicada a promover el desarrollo social y educativo de niños, jóvenes y familias en situación de vulnerabilidad.</p>
