@@ -10,4 +10,4 @@
         <img src="imagenes/noticia1.jpg" class="card-img-top" alt="Noticia 1">
         <div class="card-body">
           <h5 class="card-title">Nueva Iniciativa de Inclusión Social</h5>
-          <p class="card-text">La Fundación Guaraní lanza un nuevo programa para fomentar la inclusión social en comunidades vulnerables. Este programa busca brindar oportunidades educativas y laborales a jóvenes de la región.</p>
+          <p class="card-text">La Fundación Guaraní lanza un nuevo programa para fomentar la inclusión social en comunidad

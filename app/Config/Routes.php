@@ -16,3 +16,8 @@ $routes->get('login', 'Home::login');
 $routes->get('galeria', 'Home::galeria');
 $routes->get('eventos', 'Home::eventos');
 $routes->get('noticias', 'Home::noticias');
+
+// Rutas para el controlador de usuario
+$routes->post('registrar', 'UsuarioController::registrar');
+$routes->post('ingresar', 'UsuarioController::ingresar');
+$routes->get('salir', 'UsuarioController::salir');

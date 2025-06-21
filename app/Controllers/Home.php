@@ -44,7 +44,7 @@ class Home extends BaseController
              . view('Front/footer_view');
     }
 
-    // NUEVAS FUNCIONES
+    //  FUNCIONES BOTON DESPLEGABLE
     public function galeria(): string
     {
         return view('Front/head_view')
