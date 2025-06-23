@@ -21,3 +21,12 @@ $routes->get('noticias', 'Home::noticias');
 $routes->post('registrar', 'UsuarioController::registrar');
 $routes->post('ingresar', 'UsuarioController::ingresar');
 $routes->get('salir', 'UsuarioController::salir');
+
+$routes->get('usuarios', 'UsuarioController::index');
+$routes->get('usuario/editar/(:num)', 'UsuarioController::editar/$1');
+$routes->post('usuario/actualizar/(:num)', 'UsuarioController::actualizar/$1');
+$routes->get('usuario/eliminar/(:num)', 'UsuarioController::eliminar/$1');
+
+// Paneles según perfil
+$routes->get('admin', 'AdminController::index');
+$routes->get('asociado', 'AsociadoController::index');
