@@ -6,9 +6,11 @@ class Home extends BaseController
 {
     public function index(): string
     {
+        $data = $this->obtenerNavbarYMensa(true); // Mostrará mensaje si hay uno
+
         return view('Front/head_view')
-             . view('Front/navbar_view')
-             . view('Front/principal_ultimo')
+             . $data['navbar']
+             . view('Front/principal_ultimo', ['mensaje' => $data['mensaje']])
              . view('Front/footer_view');
     }
 
@@ -44,7 +46,6 @@ class Home extends BaseController
              . view('Front/footer_view');
     }
 
-    //  FUNCIONES BOTON DESPLEGABLE
     public function galeria(): string
     {
         return view('Front/head_view')
@@ -67,5 +68,31 @@ class Home extends BaseController
              . view('Front/navbar_view')
              . view('Front/noticias')
              . view('Front/footer_view');
+    }
+
+    private function obtenerNavbarYMensa($conMensaje = false)
+    {
+        $session = session();
+        $perfilId = $session->get('perfil_id');
+        $mensaje = "";
+
+        if (!$perfilId) {
+            // Usuario público
+            $navbar = view('Front/navbar_view_publico');
+        } elseif ($perfilId == 1) {
+            $navbar = view('Front/navbar_view'); // Admin
+            if ($conMensaje) {
+                $mensaje = "Inicio sesión desde admin";
+            }
+        } elseif ($perfilId == 2) {
+            $navbar = view('Front/navbar_view_usuario'); // Asociado
+            if ($conMensaje) {
+                $mensaje = "Inicio sesión como usuario asociado";
+            }
+        } else {
+            $navbar = view('Front/navbar_view_publico'); // fallback
+        }
+
+        return ['navbar' => $navbar, 'mensaje' => $mensaje];
     }
 }

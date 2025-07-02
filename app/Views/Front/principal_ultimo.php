@@ -1,6 +1,13 @@
 <div class="content">
     <section class="container my-5">
-         <main class="container">        
+         <main class="container">   
+            <?php if (session()->getFlashdata('info')): ?>
+    <div class="alert alert-info text-center">
+        <?= session()->getFlashdata('info') ?>
+    </div>
+<?php endif; ?>
+
+                 
         <img src="<?= base_url('imagenes/imagen-fundacion.jpg') ?>" alt="Imagen ilustrativa" class="img-fluid w-50 rounded shadow-sm d-block mx-auto">
     </main>
                 <div class="cajadeparrafos my-4">
@@ -10,6 +17,7 @@
         
         <p>Nuestro compromiso es construir una sociedad más justa a través de la educación, el acompañamiento social y la formación en valores.</p>
     </section>
+
 
     <!-- Inicio del Carrusel -->
     <div id="carouselExample" class="carousel slide container my-5" data-bs-ride="carousel">

@@ -1,13 +1,16 @@
 <?php
-
 namespace App\Controllers;
-
-use CodeIgniter\Controller;
 
 class AsociadoController extends BaseController
 {
     public function index()
     {
-        return view('asociado');
+        $session = session();
+        $mensaje = "Inicio sesión como usuario asociado";
+
+        return view('Front/head_view')
+             . view('Front/navbar_view_usuario')
+             . view('Asociado/dashboard', ['mensaje' => $mensaje])
+             . view('Front/footer_view');
     }
 }

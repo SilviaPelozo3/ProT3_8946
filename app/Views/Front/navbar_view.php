@@ -1,3 +1,9 @@
+<?php if (isset($mensaje) && $mensaje !== ""): ?>
+    <div class="alert alert-info text-center">
+        <?= esc($mensaje) ?>
+    </div>
+<?php endif; ?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
         <a class="navbar-brand" href="<?= base_url('/') ?>">
@@ -40,12 +46,23 @@
             </form>
 
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('registro') ?>">Registro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('login') ?>">Login</a>
-                </li>
+                <?php if (session()->get('isLoggedIn')): ?>
+                    <?php if (session()->get('perfil_id') == 1): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('usuarios') ?>">Administrar Usuarios</a>
+                        </li>
+                    <?php endif; ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('salir') ?>">Cerrar sesión</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('registro') ?>">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('login') ?>">Login</a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>

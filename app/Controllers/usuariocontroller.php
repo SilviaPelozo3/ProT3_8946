@@ -74,58 +74,62 @@ class UsuarioController extends BaseController
         return redirect()->to('/')->with('info', 'Has cerrado sesión correctamente.');
     }
 
-## agregado  para CRUD
-public function index()
-{
-    if (!$this->esAdmin()) {
-        return redirect()->to('/')->with('error', 'Acceso no autorizado.');
+    // =======================
+    // CRUD de Usuarios (Admin)
+    // =======================
+
+    public function index()
+    {
+        if (!$this->esAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso no autorizado.');
+        }
+
+        $usuarios = $this->usuarioModel->findAll();
+        return view('Front/lista_usuarios', ['usuarios' => $usuarios]);
     }
 
-    $usuarios = $this->usuarioModel->findAll();
-    return view('Front/lista_usuarios', ['usuarios' => $usuarios]);
-}
+    public function editar($id)
+    {
+        if (!$this->esAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso no autorizado.');
+        }
 
-public function editar($id)
-{
-    if (!$this->esAdmin()) {
-        return redirect()->to('/')->with('error', 'Acceso no autorizado.');
+        $usuario = $this->usuarioModel->find($id);
+        return view('Front/editar_usuario', ['usuario' => $usuario]);
     }
 
-    $usuario = $this->usuarioModel->find($id);
-    return view('Front/editar_usuario', ['usuario' => $usuario]);
-}
+    public function actualizar($id)
+    {
+        if (!$this->esAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso no autorizado.');
+        }
 
-public function actualizar($id)
-{
-    if (!$this->esAdmin()) {
-        return redirect()->to('/')->with('error', 'Acceso no autorizado.');
+        $data = [
+            'nombre'     => $this->request->getPost('nombre'),
+            'apellido'   => $this->request->getPost('apellido'),
+            'email'      => $this->request->getPost('email'),
+            'telefono'   => $this->request->getPost('telefono'),
+            'perfil_id'  => $this->request->getPost('perfil_id'), // Se agrega para permitir edición del perfil
+        ];
+
+        $this->usuarioModel->update($id, $data);
+
+        return redirect()->to('/usuarios')->with('success', 'Usuario actualizado correctamente.');
     }
 
-    $data = [
-        'nombre'   => $this->request->getPost('nombre'),
-        'apellido' => $this->request->getPost('apellido'),
-        'email'    => $this->request->getPost('email'),
-        'telefono' => $this->request->getPost('telefono'),
-    ];
+    public function eliminar($id)
+    {
+        if (!$this->esAdmin()) {
+            return redirect()->to('/')->with('error', 'Acceso no autorizado.');
+        }
 
-    $this->usuarioModel->update($id, $data);
+        $this->usuarioModel->delete($id);
 
-    return redirect()->to('/usuarios')->with('success', 'Usuario actualizado correctamente.');
-}
-
-public function eliminar($id)
-{
-    if (!$this->esAdmin()) {
-        return redirect()->to('/')->with('error', 'Acceso no autorizado.');
+        return redirect()->to('/usuarios')->with('success', 'Usuario eliminado correctamente.');
     }
 
-    $this->usuarioModel->delete($id);
-
-    return redirect()->to('/usuarios')->with('success', 'Usuario eliminado correctamente.');
-}
-
-private function esAdmin()
-{
-    return session()->get('perfil_id') === 1;
-}
+    private function esAdmin()
+    {
+        return session()->get('perfil_id') === 1;
+    }
 }
